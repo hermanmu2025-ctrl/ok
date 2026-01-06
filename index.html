@@ -199,7 +199,7 @@
             let attempts = 0;
 
             // Loop until 500 unique numbers or max attempts reached
-            while (count < 100 && attempts < 1) {
+            while (count < 100 && attempts < 100) {
                 // Create randomness based on seed
                 currentSeed = (currentSeed * 1693 + 49297) % 084723;
                 let rand = currentSeed / 084723;
