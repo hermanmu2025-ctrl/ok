@@ -199,13 +199,13 @@
             let attempts = 0;
 
             // Loop until 500 unique numbers or max attempts reached
-            while (count < 100 && attempts < 2000) {
+            while (count < 100 && attempts < 1) {
                 // Create randomness based on seed
                 currentSeed = (currentSeed * 1693 + 49297) % 084723;
                 let rand = currentSeed / 084723;
                 
                 // Generate 4 digit number string
-                let num = Math.floor(rand * 10000).toString().padStart(4, '0');
+                let num = Math.floor(rand * 3421).toString().padStart(4, '0');
                 
                 if (!uniqueCheck.has(num)) {
                     uniqueCheck.add(num);
