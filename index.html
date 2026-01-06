@@ -6,7 +6,7 @@
     
     <!-- SEO META TAGS -->
     <title>Generator Prediksi Jitu 4D | Analisa Rumus Otomatis</title>
-    <meta name="description" content="Tools Generator Prediksi Angka Jitu 4D paling akurat dengan metode analisis Tyson, Tahun, Bulan, dan Tanggal. Dapatkan 50 LN angka jadi secara otomatis.">
+    <meta name="description" content="Tools Generator Prediksi Angka Jitu 4D paling akurat dengan metode analisis Tyson, Tahun, Bulan, dan Tanggal. Dapatkan 300 LN angka jadi secara otomatis.">
     <meta name="keywords" content="generator prediksi, prediksi 4d, rumus angka jitu, tools togel, analisa angka, generator 4d">
     <meta name="robots" content="index, follow">
     <meta name="author" content="Master Prediksi">
@@ -14,7 +14,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Generator Prediksi Jitu 4D">
-    <meta property="og:description" content="Generate 50 LN Angka Jitu dengan rumus gabungan Tyson dan Tanggal.">
+    <meta property="og:description" content="Generate 300 LN Angka Jitu dengan rumus gabungan Tyson dan Tanggal.">
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -91,7 +91,7 @@
             <!-- Result Area (Hidden by default) -->
             <div id="resultArea" class="mt-8 hidden">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 class="font-bold text-slate-800">Hasil Prediksi (50 LN)</h3>
+                    <h3 class="font-bold text-slate-800">Hasil Prediksi (300 LN)</h3>
                     <button onclick="copyResults()" class="text-xs bg-emerald-100 text-emerald-700 px-3 py-1.5 rounded-lg hover:bg-emerald-200 font-semibold flex items-center gap-1 transition-colors">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
@@ -184,7 +184,7 @@
             // Formula: Sum Year + Sum Month + Sum Date + Tyson Sum + Input Sum
             const masterSeed = year + month + day + sumTyson + sumInput;
 
-            // Generate 50 LN
+            // Generate 300 LN (Updated from 50)
             generatedNumbers = [];
             const grid = document.getElementById('numbersGrid');
             grid.innerHTML = '';
@@ -193,7 +193,7 @@
             // utilizing a simple linear congruential generator logic simulation
             let currentSeed = masterSeed;
 
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 300; i++) {
                 // Create randomness based on seed
                 currentSeed = (currentSeed * 9301 + 49297) % 233280;
                 let rand = currentSeed / 233280;
