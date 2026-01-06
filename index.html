@@ -99,6 +99,20 @@
                         COPY HASIL
                     </button>
                 </div>
+
+                <!-- Feature: Search Filter -->
+                <div class="mb-4 relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <input type="text" 
+                           id="searchInput" 
+                           onkeyup="searchNumbers()" 
+                           placeholder="Cari angka... (Contoh: 12)" 
+                           class="w-full pl-10 pr-4 py-2 bg-white border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 text-slate-600 placeholder-slate-400 shadow-sm">
+                </div>
                 
                 <div id="numbersGrid" class="grid grid-cols-5 gap-2 mb-4">
                     <!-- Numbers injected here -->
@@ -135,6 +149,7 @@
         function generatePrediction() {
             const inputVal = document.getElementById('input4D').value;
             const dateVal = document.getElementById('dateInput').value;
+            const searchInput = document.getElementById('searchInput');
 
             // Validation
             if (inputVal.length !== 4) {
@@ -145,6 +160,9 @@
                 alert("Mohon pilih tanggal analisis!");
                 return;
             }
+
+            // Clear previous search
+            searchInput.value = '';
 
             // 1. Calculate Sums from Date
             const dateObj = new Date(dateVal);
@@ -196,6 +214,29 @@
             
             // Smooth scroll to results
             document.getElementById('resultArea').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function searchNumbers() {
+            const query = document.getElementById('searchInput').value;
+            const chips = document.querySelectorAll('.number-chip');
+            
+            chips.forEach(chip => {
+                if (!query) {
+                    // Reset state if empty
+                    chip.classList.remove('opacity-25', 'ring-2', 'ring-blue-400', 'bg-blue-50');
+                    chip.classList.add('bg-white');
+                } else {
+                    if (chip.textContent.includes(query)) {
+                        // Match: Highlight
+                        chip.classList.remove('opacity-25', 'bg-white');
+                        chip.classList.add('ring-2', 'ring-blue-400', 'bg-blue-50');
+                    } else {
+                        // No Match: Dim
+                        chip.classList.add('opacity-25', 'bg-white');
+                        chip.classList.remove('ring-2', 'ring-blue-400', 'bg-blue-50');
+                    }
+                }
+            });
         }
 
         function copyResults() {
